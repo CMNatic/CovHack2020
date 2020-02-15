@@ -1,0 +1,143 @@
+/* Import Comfortaa, Open+Sans, Ubuntu fonts */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans|Ubuntu');
+
+i {
+    padding-right: 1%;
+}
+
+a {
+   -moz-transition: all 0.2s linear !important;
+   -webkit-transition: all 0.2s linear !important;
+   -o-transition: all 0.2s linear !important;
+   transition: all 0.2s linear !important;
+   text-decoration: none  !important;
+	border-bottom-color: #884EA0 !important;
+  border-bottom: 0px dotted !important;
+}
+a:link {
+    text-decoration: none !important;
+    color: #87ceeb !important;
+
+}
+
+a:visited {
+    text-decoration: none !important;
+    color: #87ceeb !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #999393 !important;
+
+}
+a:active {
+    text-decoration: none !important;
+}
+
+.indexHeader, .indexheader a {
+    padding-top: 13%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 128px;
+}
+
+/* Div tag "indexHeader" styling elements, i, p, button **/
+.indexHeader i {
+    font-size: 70px;
+    padding-bottom: 5%;
+}
+
+.indexHeader p {
+    padding-top: 2%;
+    padding-left: 1%;
+    font-size: 24px;
+}
+
+.indexHeader button {
+    margin-top: 2%;
+    margin-bottom: 20%;
+    text-decoration: none;
+}
+
+.indexHeader h1 {
+  font-size: 72px;
+}
+
+
+.indexHeader .btn:hover, .indexHeader .btn:focus {
+    background: #3fc0ad;
+    outline: none !important;
+}
+
+.card {
+  display: inline;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card a {
+  color: #000;
+}
+
+.card-header {
+  font-size: 28px;
+}
+
+/* Index jumbotron styling */
+.jumbotron {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0% !important; /* !important Overrides Bootstrap default styling of margin-bottom */
+    height: 100%;
+}
+.jumbotron a {
+    margin-left: 2%;
+    margin-right: 6%;
+    color: black !important; /* !important Overrides Bootstrap default styling of the color attribute */
+}
+.jumbotron a:hover {
+    margin-left 2%;
+    margin-right: 6%;
+    color: white !important; /* !important Overrides Bootstrap default styling of the color attribute */
+}
+
+btn {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* Registration Page */
+
+.form-control {
+    min-height: 41px;
+    box-shadow: none;
+    border-color: #e1e4e5;
+}
+
+.form-control:focus {
+    border-color: #5fcaba;
+}
+
+.form-control, .btn {
+    border-radius: 2px;
+}
+
+.public-signup-form {
+    padding-top: 10%;
+    width: 500px;
+    height: 450px;
+	  margin: auto;
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+    text-align: center;
+    padding-top: 0.8%;
+    padding-bottom: 2.4%;
+}
