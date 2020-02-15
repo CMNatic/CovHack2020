@@ -5,6 +5,12 @@ i {
     padding-right: 1%;
 }
 
+#map {
+
+  height: 400px;
+  width: 100%;
+}
+
 a {
    -moz-transition: all 0.2s linear !important;
    -webkit-transition: all 0.2s linear !important;
@@ -15,19 +21,19 @@ a {
   border-bottom: 0px dotted !important;
 }
 a:link {
-    text-decoration: none !important;
-    color: #87ceeb !important;
+    text-decoration: none;
+    color: #FFF;
 
 }
 
 a:visited {
-    text-decoration: none !important;
-    color: #87ceeb !important;
+    text-decoration: none;
+    color: #FFF;
 }
 
 a:hover {
-    text-decoration: none !important;
-    color: #999393 !important;
+    text-decoration: none;
+    color: #999393;
 
 }
 a:active {
@@ -76,6 +82,7 @@ a:active {
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 2%;
 }
 
 .card a {
@@ -133,6 +140,30 @@ btn {
     height: 450px;
 	  margin: auto;
     text-align: center;
+
+}
+
+.public-signup-form .btn:hover, .signup-form .btn:focus {
+    background: #3fc0ad;
+    outline: none !important;
+}
+
+.public-signup-form a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.public-signup-form a:hover {
+    text-decoration: none;
+}
+
+.public-signup-form form a {
+    color: #5fcaba;
+    text-decoration: none;
+}
+
+.public-signup-form form a:hover {
+    text-decoration: underline;
 }
 
 .g-recaptcha {
@@ -140,4 +171,110 @@ btn {
     text-align: center;
     padding-top: 0.8%;
     padding-bottom: 2.4%;
+}
+
+.login-form {
+    padding-top: 10%;
+    width: 500px;
+    height: 450px;
+	  margin: auto;
+    text-align: center;
+}
+
+
+.login-form i {
+
+}
+
+.login-form form {
+	color: #9ba5a8;
+	border-radius: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.login-form h2 {
+	color: #333;
+    font-size: 48px;
+	  font-weight: normal;
+    margin-top: 0;
+}
+
+.login-form hr {
+    margin: 0 -30px 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.login-form .btn {
+    font-size: 18px;
+    font-weight: normal;
+    border: none;
+    min-width: 140px;
+    margin-top: 2.5%;
+}
+
+.login-form .btn:hover, .login-form .btn:focus {
+    background: #3fc0ad;
+    outline: none !important;
+}
+
+.login-form a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.login-form a:hover {
+    text-decoration: none;
+}
+
+.login-form form a {
+    color: #5fcaba;
+    text-decoration: none;
+}
+
+.login-form form a:hover {
+    text-decoration: underline;
+}
+
+
+.report-bicycle-form {
+    padding-top: 10%;
+    width: 500px;
+    height: 450px;
+	  margin: auto;
+    text-align: center;
+
+}
+
+.report-bicycle-form .btn:hover, .signup-form .btn:focus {
+    background: #3fc0ad;
+    outline: none !important;
+}
+
+.report-bicycle-form a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.report-bicycle-form a:hover {
+    text-decoration: none;
+}
+
+.report-bicycle-form form a {
+    color: #5fcaba;
+    text-decoration: none;
+}
+
+.report-bicycle-form form a:hover {
+    text-decoration: underline;
 }

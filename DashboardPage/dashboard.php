@@ -58,11 +58,52 @@
 
 </nav>
 
-<h1> Successful Login! </h1>
-<script type="text/javascript">
-document.write(document.cookie);
+<div class="indexHeader">
+  <h2 class="display-4">Welcome to CovsIT, <b><?php session_start();
+echo session_id(); ?>.</b></h2>
+    <p>What would you like to do next?</p>
+</div>
 
-</script>
+<p style="text-align: center;"> You can also display the <b>theft map</b></p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        Manage my Bicycles
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Click the relevant button below...</h5>
+        <p class="card-text"></p>
+          <a href="#" class="btn btn-outline-primary">View My Bicycles</a>
+          <a href="../ReportBicycle/reportbicycle.html" class="btn btn-outline-danger">Report a Bicycle as <b>stolen</b></a>
+          <a href="#" class="btn btn-outline-warning">Register a Bicycle</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        Manage My Account
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Click the relevant button below...</h5>
+        <p class="card-text"></p>
+          <a href="#" class="btn btn-outline-primary">View my Information</a>
+          <a href="logoutuser.php" class="btn btn-outline-danger">Sign Out of Your Account</a>
+          <a href="resetpassword.php" class="btn btn-outline-warning">Reset Your Password</a>
+      </div>
+    </div>
+  </div>
+</div>
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 </body>
 </html>

@@ -62,42 +62,100 @@
 
 </nav>
 
-<div class="public-signup-form">
- <form id="signup-form" action="registeruser.php" method="post">
-   <h2 style="display: inline-block;"><ion-icon name="person-add-outline" style="display: inline-block;"></ion-icon> Sign Up </h2>
-    <p>Create your account to enroll your Bicycle <b>today!</b></p>
+<div class="report-bicycle-form">
+ <form id="report-form" action="reportbicycle.php" method="post">
+   <h2 style="display: inline-block;"><ion-icon name="alert-circle-outline" size="large"></ion-icon> Report your Bicycle as stolen </h2>
+    <p>Please ensure you fill out the following as accurately as possible...</p>
       <hr>
-    <!-- <div class="form-group">
-       <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required" id="firstname">
-     </div>
-     <div class="form-group">
-       <input type="text" class="form-control" name="lastname" placeholder="Surname" required="required" id="lastname">
-     </div>
-
-     <div class="form-group">
-       <input type="email" class="form-control" name="email" placeholder="E-Mail address" required="required" id="email">
-     </div> -->
 
 
-     <div class="form-group">
-       <input type="text" class="form-control" name="username" placeholder="Username" required="required" id="username">
-     </div>
-
-     <div class="form-group">
-       <input type="password" class="form-control" name="password" placeholder="Password" required="required" id="password">
-     </div>
-
-     <div class="form-group">
-       <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required" id="confirm_password">
-     </div>
-
-     <div class="g-recaptcha" data-sitekey="6Ld0KtkUAAAAAFkaoLqDtYUKQszdINgnDyaMq4EE"></div>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
- <div class="form-group">
-         <button type="submit" id="register" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+<div class="form-group">
+  <input type="text" class="form-control" name="SerialNumber" placeholder="SERIAL" required="required" id="SerialNumber">
 </div>
-     <div class="text-center" style="padding-left: 15%;">Already have an account? <a href="../LoginPage/login.html"><b>Login here</b></a></div>
- </form>
+
+<div class="form-group">
+  <input type="text" class="form-control" name="Brand" placeholder="BRAND" required="required" id="Brand">
 </div>
+
+<div class="form-group">
+  <input type="text" class="form-control" name="Model" placeholder="MODEL" required="required" id="Model">
+</div>
+
+
+
+
+<div id="map"></div>
+<script>
+// Initialize and add the map
+function initMap() {
+// The location of Uluru
+
+
+var coventry = {lat: 52.405395, lng: -1.499659};
+// The map, centered at Uluru
+var map = new google.maps.Map(
+  document.getElementById('map'), {
+
+
+    zoom: 17,
+    center: coventry,
+    mapTypeId: 'hybrid',
+    gestureHandling: 'greedy',
+    disableDefaultUI: false,
+    streetViewControl: false,
+    mapTypeControl: false
+  });
+// The marker, positioned at Uluru
+var marker = new google.maps.Marker({
+
+  position: coventry,
+  map: map,
+  draggable: true,
+  title:"Drag me to the location you wish to report"
+
+});
+
+google.maps.event.addListener(marker, 'dragend', markerDragged);
+
+	function markerDragged() {
+		var selectedPos = {'latlong': marker.getPosition()};
+		geocoder.geocode(selectedPos, showAddressInInfoWindow);
+	}
+
+	function showAddressInInfoWindow(results) {
+		if (results[0]) {
+			infowindow.setContent(results[0].formatted_address);
+			infowindow.open(myMap, marker);
+		}
+	}  
+}
+</script>
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDex8xraYM4KhYAObgvCYUWfzGZebh8y6g&callback=initMap">
+</script>
+
+
+Latitude: <input id="lat" name="lat" val="40.713956" /> <br/>
+Longitude: <input id="long" name="long" val="74.006653" /> <br/>
+
+
+
+
+
+<div class="g-recaptcha" data-sitekey="6Ld0KtkUAAAAAFkaoLqDtYUKQszdINgnDyaMq4EE"></div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<div class="form-group">
+    <button type="submit" id="reportasstolen" class="btn btn-primary btn-block btn-lg">Report as <b>stolen</b></button>
+</div>
+
+
+
+</body>
+</html>

@@ -42,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="navbar-item active">
-          <a class="nav-link" href="../index.html">About</a>
+          <a class="nav-link" href="../../index.html">About</a>
         </li>
 
         <li class="navbar-item">
@@ -59,45 +59,40 @@
       </ul>
     </div>
   </div>
-
 </nav>
 
-<div class="public-signup-form">
- <form id="signup-form" action="registeruser.php" method="post">
-   <h2 style="display: inline-block;"><ion-icon name="person-add-outline" style="display: inline-block;"></ion-icon> Sign Up </h2>
-    <p>Create your account to enroll your Bicycle <b>today!</b></p>
-      <hr>
-    <!-- <div class="form-group">
-       <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required" id="firstname">
-     </div>
-     <div class="form-group">
-       <input type="text" class="form-control" name="lastname" placeholder="Surname" required="required" id="lastname">
-     </div>
+<div class="login-form">
+<form id="login-form" action="loginuser.php" method="post">
+    <hr>
+    <h2><ion-icon name="person-circle-outline"></ion-icon>Login</h2>
+    <p>Using both the Username and Password you provided on registration!</p>
+<hr>
 
-     <div class="form-group">
-       <input type="email" class="form-control" name="email" placeholder="E-Mail address" required="required" id="email">
-     </div> -->
+    <div class="form-group">
+      <input type="text" class="form-control" name="username" placeholder="Username" required="required" id="username">
+    </div>
 
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required" id="password">
+    </div>
 
-     <div class="form-group">
-       <input type="text" class="form-control" name="username" placeholder="Username" required="required" id="username">
-     </div>
+    <div class="g-recaptcha" data-sitekey="6Ld0KtkUAAAAAFkaoLqDtYUKQszdINgnDyaMq4EE"></div>
 
-     <div class="form-group">
-       <input type="password" class="form-control" name="password" placeholder="Password" required="required" id="password">
-     </div>
-
-     <div class="form-group">
-       <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required" id="confirm_password">
-     </div>
-
-     <div class="g-recaptcha" data-sitekey="6Ld0KtkUAAAAAFkaoLqDtYUKQszdINgnDyaMq4EE"></div>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
- <div class="form-group">
-         <button type="submit" id="register" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+<div class="form-group">
+        <button type="submit" id="login" class="btn btn-primary btn-block btn-lg">Log In</button>
 </div>
-     <div class="text-center" style="padding-left: 15%;">Already have an account? <a href="../LoginPage/login.html"><b>Login here</b></a></div>
- </form>
+
+<div class="text-center"><a href="../registrationpage/registration.html">Create an account</a></div>
+</form>
 </div>
+
+
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+
+
+</body>
+</html>
