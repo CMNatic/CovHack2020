@@ -62,7 +62,8 @@
 echo session_id(); ?>.</h3>
     <p>You have (0) reported Bicycles</p>
     <hr>
-    <p>And have been registered since <b>2020-02-16 02:40:32</b></p>
+    <!-- <p>And have been registered since <b>2020-02-16 02:40:32</b></p> -->
+    <p>And you have been registered since: <b><?php echo date("D M d, Y G:i a"); ?></b></p>
 
     <a href="../DashboardPage/dashboard.php"><h4>Head back to your dashboard...</h4></a>
 </div>

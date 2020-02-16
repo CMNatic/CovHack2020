@@ -36,11 +36,11 @@
     <!-- Hyperlink to the 'About' section of the page -->
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="navbar-item active">
+        <li class="navbar-item">
           <a class="nav-link" href="../index.html">About</a>
         </li>
 
-        <li class="navbar-item">
+        <li class="navbar-item active">
           <a class="nav-link" href="../DashboardPage/dashboard.php">Dashboard</a>
         </li>
 
@@ -75,7 +75,7 @@ echo session_id(); ?>.</b></h2>
         <p class="card-text"></p>
           <a href="../ManageBicycles/managebicycles.php" class="btn btn-outline-primary">View My Bicycles</a>
           <a href="../ReportBicycle/reportbicycle.html" class="btn btn-outline-danger">Report a Bicycle as <b>stolen</b></a>
-          <a href="#" class="btn btn-outline-warning">Register a Bicycle</a>
+          <a href="../ReportBicycle/reportbicycle.html" class="btn btn-outline-warning">Register a Bicycle</a>
       </div>
     </div>
   </div>
