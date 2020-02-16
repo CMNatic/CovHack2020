@@ -58,51 +58,11 @@
 </nav>
 
 <div class="indexHeader">
-  <h2 class="display-4">Welcome to CovsIT, <b><?php session_start();
-echo session_id(); ?>.</b></h2>
-    <p>What would you like to do next?</p>
-</div>
+  <h3 class="display-4">You are User: <?php session_start();
+echo session_id(); ?>.</h3>
+    <p>You have (0) reported Bicycles</p>
+    <hr>
+    <p>And have been registered since <b>2020-02-16 02:40:32</b></p>
 
-<p style="text-align: center;"> You can also display the <a href="../TheftMap/theftmap.html"><b><u>Theft Map</b></u></a></p>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        Manage my Bicycles
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Click the relevant button below...</h5>
-        <p class="card-text"></p>
-          <a href="../ManageBicycles/managebicycles.php" class="btn btn-outline-primary">View My Bicycles</a>
-          <a href="../ReportBicycle/reportbicycle.html" class="btn btn-outline-danger">Report a Bicycle as <b>stolen</b></a>
-          <a href="#" class="btn btn-outline-warning">Register a Bicycle</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        Manage My Account
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Click the relevant button below...</h5>
-        <p class="card-text"></p>
-          <a href="../ViewUserInfo/viewuserinfo.php" class="btn btn-outline-primary">View my Information</a>
-          <a href="logout.php" class="btn btn-outline-danger" action="logout.php">Sign Out of Your Account</a>
-          <a href="resetpassword.php" class="btn btn-outline-warning">Reset Your Password</a>
-      </div>
-    </div>
-  </div>
+    <a href="../DashboardPage/dashboard.php"><h4>Head back to your dashboard...</h4></a>
 </div>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-</body>
-</html>

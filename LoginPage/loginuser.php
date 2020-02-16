@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 // Initialize the session
 session_start();
 
@@ -9,7 +11,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // Include config file
-require_once "../../common/config.php";
+require_once "../common/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";

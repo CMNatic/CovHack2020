@@ -11,7 +11,15 @@
 
     <title>I've CovsIT</title>
 	<!-- custom css styles -->
-	<link href="../css/styles.css" rel="stylesheet">
+	<style>
+  #map {
+    margin-left: 20%;
+    margin-top: 10%;
+    height: 500px;
+    width: 70%;
+    display: inline-block
+  }
+  </style>
 
     <!-- Ionicons styles -->
   <link href="../css/ionicons.min.css" rel="stylesheet">
@@ -41,12 +49,12 @@
     <!-- Hyperlink to the 'About' section of the page -->
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="navbar-item active">
+        <li class="navbar-item">
           <a class="nav-link" href="http://covhack2020.cmnatic.co.uk/index.html">About</a>
         </li>
 
-        <li class="navbar-item">
-          <a class="nav-link" href="../RegistrationPage/registration.html">Register</a>
+        <li class="navbar-item active">
+          <a class="nav-link" href="../DashboardPage/dashboard.php">Return to Dashboard</a>
         </li>
 
         <li class="navbar-item">
@@ -62,48 +70,6 @@
 
 </nav>
 
-<div class="report-bicycle-form">
- <form id="report-form" action="reportbicycleDAO.php" method="post">
-   <h2 style="display: inline-block;"><ion-icon name="alert-circle-outline" size="large"></ion-icon> Report your Bicycle as stolen </h2>
-    <p>Please ensure you fill out the following as accurately as possible...</p>
-      <hr>
-
-
-<div class="form-group">
-  <label> Serial Number </label>
-  <input type="text" class="form-control" name="SerialNumber" placeholder="SERIAL" required="required" id="SerialNumber">
-</div>
-
-<div class="form-group">
-  <label> Brand </label>
-  <input type="text" class="form-control" name="Brand" placeholder="BRAND" required="required" id="Brand">
-</div>
-
-<div class="form-group">
-  <label> Model </label>
-  <input type="text" class="form-control" name="Model" placeholder="MODEL" required="required" id="Model">
-</div>
-
-<div class="form-group">
-  <label> Accessories </label>
-  <input type="text" class="form-control" name="Model" placeholder="MODEL" required="required" id="Accessories">
-</div>
-
-
-<div class="form-group">
-  <label> Type </label>
-  <input type="text" class="form-control" name="Model" placeholder="MODEL" required="required" id="Type">
-</div>
-
-<div class="form-group">
-  <label> Colour </label>
-  <input type="text" class="form-control" name="Model" placeholder="MODEL" required="required" id="Colour">
-</div>
-
-
-<input type="submit" id = "btnAddItem" value="Add Item">
-
-
 <div id="map"></div>
 <script>
 // Initialize and add the map
@@ -116,66 +82,34 @@ var coventry = {lat: 52.405395, lng: -1.499659};
 var map = new google.maps.Map(
   document.getElementById('map'), {
 
-
-    zoom: 17,
-    center: coventry,
-    mapTypeId: 'hybrid',
-    gestureHandling: 'greedy',
-    disableDefaultUI: false,
-    streetViewControl: false,
-    mapTypeControl: false
-  });
-// The marker, positioned at Uluru
-var marker = new google.maps.Marker({
-
-  position: coventry,
-  map: map,
-  draggable: true,
-  title:"Drag me to the location you wish to report"
+  zoom: 17, 
+  center: coventry,
+  disableDefaultUI: true,
+  gestureHandling: 'none',
+  zoomControl: false
 
 });
-
-google.maps.event.addListener(marker, 'dragend', markerDragged);
-
-	function markerDragged() {
-		var selectedPos = {'latlong': marker.getPosition()};
-		geocoder.geocode(selectedPos, showAddressInInfoWindow);
-	}
-
-	function showAddressInInfoWindow(results) {
-		if (results[0]) {
-			infowindow.setContent(results[0].formatted_address);
-			infowindow.open(myMap, marker);
-		}
-	}
+// The marker, positioned at Uluru
+var marker = new google.maps.Marker({position: coventry, map: map});
 }
+
+
+
 </script>
 <!--Load the API from the specified URL
 * The async attribute allows the browser to render the page while the API loads
 * The key parameter will contain your own API key (which is not needed for this tutorial)
 * The callback parameter executes the initMap() function
 -->
+
+<h2 style="margin-top: -18%;"> CovsIT Theft Map </h2>
+<p> So far there has been <b>1</b> report of someone <br /> loosing their marbles!</p>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDex8xraYM4KhYAObgvCYUWfzGZebh8y6g&callback=initMap">
 </script>
 
 
-Latitude: <input id="lat" name="lat" val="40.713956" /> <br/>
-Longitude: <input id="long" name="long" val="74.006653" /> <br/>
 
-
-
-
-
-<!-- <div class="g-recaptcha" data-sitekey="6Ld0KtkUAAAAAFkaoLqDtYUKQszdINgnDyaMq4EE"></div>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
-
-<div class="form-group">
-    <button type="submit" id="reportasstolen" class="btn btn-primary btn-block btn-lg">Report as <b>stolen</b></button>
-</div>
-
-<script src="./addreport.js"></script>
 
 </body>
 </html>

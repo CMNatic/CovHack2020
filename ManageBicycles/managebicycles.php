@@ -58,51 +58,68 @@
 </nav>
 
 <div class="indexHeader">
-  <h2 class="display-4">Welcome to CovsIT, <b><?php session_start();
-echo session_id(); ?>.</b></h2>
-    <p>What would you like to do next?</p>
+  <h2 class="display-4">Search for your Bicycle by Manufacturer</h2>
 </div>
 
-<p style="text-align: center;"> You can also display the <a href="../TheftMap/theftmap.html"><b><u>Theft Map</b></u></a></p>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        Manage my Bicycles
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Click the relevant button below...</h5>
-        <p class="card-text"></p>
-          <a href="../ManageBicycles/managebicycles.php" class="btn btn-outline-primary">View My Bicycles</a>
-          <a href="../ReportBicycle/reportbicycle.html" class="btn btn-outline-danger">Report a Bicycle as <b>stolen</b></a>
-          <a href="#" class="btn btn-outline-warning">Register a Bicycle</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        Manage My Account
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Click the relevant button below...</h5>
-        <p class="card-text"></p>
-          <a href="../ViewUserInfo/viewuserinfo.php" class="btn btn-outline-primary">View my Information</a>
-          <a href="logout.php" class="btn btn-outline-danger" action="logout.php">Sign Out of Your Account</a>
-          <a href="resetpassword.php" class="btn btn-outline-warning">Reset Your Password</a>
-      </div>
-    </div>
-  </div>
-</div>
+<form action="index.php" method="get">
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<div class="input-group">
+  <input type="text" id="searchForBicycle" name="searchForBicycle" placeholder="Raleigh">
+    <div class="input-group-append" id="button-addon4">
+      <input id="submit" type="submit" value="Search!">
+    </div>
+  </div>
+<br>
+<br>
+</form>
+
+
+<?php
+
+
+echo "<table><tr><th></th></tr>";
+
+
+  searchForBicycle();
+  // Run show Item function
+  function searchForBicycle() {
+    include "config.php";
+    $searchForBicycle = $_GET['searchForBicycle'];
+    console.log("$searchForBicycle");
+    if ($searchForBicycle != "") {
+      $sql = "SELECT * FROM `tbl_bicycles` ".
+        " WHERE ".
+        " Brand = '$searchForBicycle'";
+      console.log("$searchForBicycle");
+
+      echo "Your search item <b><u>" . $searchForBicycle . "</b></u> has the following matches: <br> ";
+
+      $res = mysqli_query($connection, $sql);
+      while($row = mysqli_fetch_array($res)) {
+
+      $serialNumber = $row[0];
+      $brand = $row[1];
+      $model = $row[2];
+      $accessories = $row[3];
+      $type = $row[4];
+      $colour = $row[5];
+
+
+        echo "<tr><td><strong>Serial Number:</strong></td><td>" .$serialNumber ."</td></tr>";
+        echo "<tr><td><strong>Brand</strong></td><td>" .$brand ."</td></tr>";
+        echo "<tr><td><strong>Model</strong></td><td>" .$model ."</td></tr>";
+        echo "<tr><td><strong>Accessories</strong></td><td>" .$accessories ."</td></tr>";
+        echo "<tr><td><strong>Type</strong></td><td>" .$type ."</td></tr>";
+        echo "<tr><td><strong>Colour</strong></td><td>" .$colour ."</td></tr>";
+          echo    "<tr><td><br><br></td></tr>";
+
+      };
+    }
+echo "</table>";
+
+  }
+?>
+
+</section>
 </body>
 </html>

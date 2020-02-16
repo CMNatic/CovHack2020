@@ -1,46 +1,58 @@
-var mapCenter = new google.maps.LatLng(52.405395,-1.499659);
-var geocoder = new google.maps.Geocoder();
-var infowindow = new google.maps.InfoWindow();
+$(document).ready(function(){
+	/*$('#txtItemCategory').val('');
+	$('#txtItemName').val('');
+	$('#txtItemDescription').val('');
+	$('#txtPrice').val('0.0');*/
 
-function initialize(){
-	var mapOptions = {
-		zoom: 15,
-		center: mapCenter
-    };
+	//check login
+	$.ajax({
+			type: "POST",
+			url: "../common/config.php"
+		    }
+	});
+});
 
-	myMap = new google.maps.Map(document.getElementById("mapInput"), mapOptions);
-
-    marker = new google.maps.Marker({
-		map: myMap,
-        position: mapCenter,
-        draggable: true
-    });
-
-    google.maps.event.addListener(marker, 'dragend', markerDragged);
-
-	function markerDragged() {
-		var selectedPos = {'latLng': marker.getPosition()};
-		geocoder.geocode(selectedPos, showAddressInInfoWindow);
-	}
-
-	function showAddressInInfoWindow(results) {
-		if (results[0]) {
-			infowindow.setContent(results[0].formatted_address);
-			infowindow.open(myMap, marker);
-		}
-	}
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-$('#formInsertEvent').submit(function(){
+//logout
+$("#linkLogout").click(function(event){
+	//document.location.href = "../login/Login.html";
+	//window.open("yahoo.com", '_blank');
 	event.preventDefault();
-	setDatabaseName('dbAnimal', ['AnimalObjStore', 'EventObjStore']);
-	setCurrObjectStoreName('EventObjStore');
-	startDB(function() {
-		insertEvent(marker);
+	$.ajax({
+			type: "POST",
+			url: "../common/config.php"
+		    },
+			error: function(xhr,textStatus,err)
+			{
+				console.log("readyState: " + xhr.readyState);
+				console.log("responseText: "+ xhr.responseText);
+				console.log("status: " + xhr.status);
+				console.log("text status: " + textStatus);
+				console.log("error: " + err);
+			}
+	});
 
-		alert("Event has addedd successfully");
-	})
+});
 
-})
+//Event handler for registration form submit
+$('#report-form').submit(function(event){
+	formData = $('#report-form').serialize();
+    // cancels the form submission
+    event.preventDefault();
+	//alert(formData);
+
+	$.ajax({
+		type: "POST",
+		url: "reportbicycle.php",
+		data: formData+"&phpfunction=addItem",
+	    success: function(echoedMsg){
+			if(echoedMsg=='true')    {
+				$("#divMessage").html("Item added succesfully");
+			} else {
+				$("#divMessage").html(echoedMsg);
+			}
+	    },
+		error: function(msg){
+			console.log(msg);
+	    }
+	});
+});
